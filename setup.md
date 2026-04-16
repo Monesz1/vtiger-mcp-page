@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "{{ site.setup.page_title }}"
-description: "{{ site.setup.intro }}"
+title: "Beállítási útmutató"
+description: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val 4 egyszerű lépésben."
 ---
 
 <div style="margin-bottom: 40px; display: inline-block; background: var(--color-surface); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--color-primary);">
