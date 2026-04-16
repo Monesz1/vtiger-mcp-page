@@ -4,11 +4,11 @@ layout: default
 
 <main style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; padding: 48px; align-items: center; max-width: 1200px; margin: 0 auto;">
   <section class="hero-content">
-    <h1 style="font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -2px;">{{ site.data.site.hero.headline }}</h1>
-    <p style="font-size: 18px; color: var(--color-muted); margin-bottom: 32px; max-width: 440px;">{{ site.data.site.hero.subheadline }}</p>
+    <h1 style="font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -2px;">{{ site.data.content.hero.headline }}</h1>
+    <p style="font-size: 18px; color: var(--color-muted); margin-bottom: 32px; max-width: 440px;">{{ site.data.content.hero.subheadline }}</p>
     <div class="cta-group" style="display: flex; gap: 16px;">
-      <a href="{{ '/setup/' | relative_url }}" class="btn btn-primary">{{ site.data.site.hero.cta_primary }}</a>
-      <a href="{{ '/connection-test/' | relative_url }}" class="btn btn-secondary">{{ site.data.site.hero.cta_secondary }}</a>
+      <a href="{{ '/setup/' | relative_url }}" class="btn btn-primary">{{ site.data.content.hero.cta_primary }}</a>
+      <a href="{{ '/connection-test/' | relative_url }}" class="btn btn-secondary">{{ site.data.content.hero.cta_secondary }}</a>
     </div>
   </section>
 
@@ -57,7 +57,7 @@ layout: default
 <section class="features">
   <div class="container">
     <div class="features-grid">
-      {% for feature in site.data.site.features %}
+      {% for feature in site.data.content.features %}
       <div class="feature-card">
         <div class="feature-icon">{{ feature.icon }}</div>
         <h3>{{ feature.title }}</h3>

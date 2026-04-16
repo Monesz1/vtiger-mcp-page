@@ -1,8 +1,6 @@
 title: "vtigerCRM MCP"
 description: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val az MCP protokollon keresztül."
 lang: "hu"
-baseurl: ""
-url: "https://your-username.github.io"
 
 product:
   name: "vtigerCRM MCP"

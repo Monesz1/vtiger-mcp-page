@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "{{ site.data.site.setup.page_title }}"
-description: "{{ site.data.site.setup.intro }}"
+title: "{{ site.data.content.setup.page_title }}"
+description: "{{ site.data.content.setup.intro }}"
 ---
 
 <div style="margin-bottom: 40px; display: inline-block; background: var(--color-surface); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--color-primary);">
-  ⏱️ {{ site.data.site.setup.time_estimate }}
+  ⏱️ {{ site.data.content.setup.time_estimate }}
 </div>
 
 ## Előfeltételek
@@ -81,7 +81,7 @@ Sikeres csatlakozás után azonnal elkezdhetsz parancsokat adni a Claude-nak. Pr
 
 <div class="faq">
   <h2>Gyakori kérdések (FAQ)</h2>
-  {% for item in site.data.site.faq %}
+  {% for item in site.data.content.faq %}
   <details>
     <summary>{{ item.q }}</summary>
     <div class="faq-answer">{{ item.a }}</div>
