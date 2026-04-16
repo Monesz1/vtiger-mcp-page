@@ -25,12 +25,13 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
       - name: Build Jekyll site
+        working-directory: ./vtiger-mcp-site
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site"
+          path: "vtiger-mcp-site/_site"
 
   deploy:
     environment:
