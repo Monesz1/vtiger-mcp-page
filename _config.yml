@@ -29,18 +29,18 @@ nav:
     url: "/aszf/"
 
 design:
-  color_primary: "#5B6EF5"
-  color_primary_dark: "#4357E0"
-  color_bg: "#FFFFFF"
-  color_surface: "#F8F9FE"
-  color_text: "#1A1A2E"
-  color_muted: "#6B7280"
-  color_border: "#E5E7EB"
-  color_success: "#10B981"
-  color_error: "#EF4444"
-  color_warning: "#F59E0B"
-  border_radius: "12px"
-  font_family: "'Inter', system-ui, sans-serif"
+  color_primary: "#1565C0"
+  color_primary_dark: "#0D47A1"
+  color_bg: "#F8FAFC"
+  color_surface: "#FFFFFF"
+  color_text: "#1E293B"
+  color_muted: "#475569"
+  color_border: "#E2E8F0"
+  color_success: "#059669"
+  color_error: "#DC2626"
+  color_warning: "#D97706"
+  border_radius: "6px"
+  font_family: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
 
 markdown: kramdown
 highlighter: rouge

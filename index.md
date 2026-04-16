@@ -14,21 +14,21 @@ layout: default
 
   <section class="widgets-container">
     <div class="widget connection-tester" style="pointer-events: none;">
-      <div class="widget-title" style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 16px; opacity: 0.8;">Kapcsolat tesztelése (Live Sandbox)</div>
-      <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 11px; margin-bottom: 4px; opacity: 0.6;">vtigerCRM URL</label>
-        <div class="input-mock" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: white; font-size: 13px; font-family: monospace;">https://crm.cegem.hu</div>
+      <div class="widget-title" style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 20px; color: #64748B;">Kapcsolat tesztelése (Live Sandbox)</div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">vtigerCRM URL</label>
+        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">https://crm.cegem.hu</div>
       </div>
-      <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 11px; margin-bottom: 4px; opacity: 0.6;">Felhasználónév</label>
-        <div class="input-mock" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: white; font-size: 13px; font-family: monospace;">admin</div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">Felhasználónév</label>
+        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">admin</div>
       </div>
-      <div class="form-group" style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 11px; margin-bottom: 4px; opacity: 0.6;">AccessKey</label>
-        <div class="input-mock" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: white; font-size: 13px; font-family: monospace;">••••••••••••••••</div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">AccessKey</label>
+        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">••••••••••••••••</div>
       </div>
-      <div class="status-panel" style="margin-top: 20px; padding: 12px; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--color-success); border-radius: 8px; color: var(--color-success); font-size: 13px; display: flex; align-items: center; gap: 8px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <div class="status-panel" style="margin-top: 24px; padding: 16px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 6px; color: #065F46; font-size: 14px; display: flex; align-items: center; gap: 8px; font-weight: 500;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         Sikeres csatlakozás: 34 elérhető modul.
       </div>
     </div>
