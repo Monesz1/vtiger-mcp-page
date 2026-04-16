@@ -1,0 +1,44 @@
+name: Login Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      BASEURL:
+        description: "Vtiger BASEURL"
+        required: true
+        type: string
+      ACCESSKEY_SECRET:
+        description: "Admin ACCESSKEY_SECRET"
+        required: true
+        type: string
+
+jobs:
+  run-login-check:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.run-script.outputs.result }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x scripts/logincheck.sh
+
+      - name: Run script and capture output
+        id: run-script
+        env:
+          BASEURL: ${{ github.event.inputs.BASEURL }}
+          ACCESSKEY_SECRET: ${{ github.event.inputs.ACCESSKEY_SECRET }}
+        run: |
+          echo "Running logincheck.sh..."
+          OUTPUT=$(./scripts/logincheck.sh)
+          echo "Script output:"
+          echo "$OUTPUT"
+
+          # Escape output for GitHub Actions
+          OUTPUT_ESCAPED="${OUTPUT//'%'/'%25'}"
+          OUTPUT_ESCAPED="${OUTPUT_ESCAPED//$'\n'/'%0A'}"
+          OUTPUT_ESCAPED="${OUTPUT_ESCAPED//$'\r'/'%0D'}"
+
+          echo "::set-output name=result::$OUTPUT_ESCAPED"
