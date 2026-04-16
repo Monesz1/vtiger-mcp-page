@@ -2,18 +2,18 @@
 layout: default
 ---
 
-<main style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; padding: 48px; align-items: center; max-width: 1200px; margin: 0 auto;">
+<main class="hero-layout">
   <section class="hero-content">
     <h1 style="font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -2px;">{{ site.hero.headline }}</h1>
     <p style="font-size: 18px; color: var(--color-muted); margin-bottom: 32px; max-width: 440px;">{{ site.hero.subheadline }}</p>
-    <div class="cta-group" style="display: flex; gap: 16px;">
+    <div class="cta-group">
       <a href="{{ '/setup/' | relative_url }}" class="btn btn-primary">{{ site.hero.cta_primary }}</a>
       <a href="{{ '/connection-test/' | relative_url }}" class="btn btn-secondary">{{ site.hero.cta_secondary }}</a>
     </div>
   </section>
 
-  <section class="widgets-container" style="display: flex; flex-direction: column; gap: 24px;">
-    <div class="widget connection-tester" style="background: #1A1A2E; color: white; border: none; border-radius: var(--border-radius); padding: 24px;">
+  <section class="widgets-container">
+    <div class="widget connection-tester" style="pointer-events: none;">
       <div class="widget-title" style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 16px; opacity: 0.8;">Kapcsolat tesztelése (Live Sandbox)</div>
       <div class="form-group" style="margin-bottom: 12px;">
         <label style="display: block; font-size: 11px; margin-bottom: 4px; opacity: 0.6;">vtigerCRM URL</label>
@@ -33,7 +33,7 @@ layout: default
       </div>
     </div>
 
-    <div class="setup-steps" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div class="steps-grid">
       <div class="step-mini" style="background: white; padding: 16px; border-radius: 8px; border: 1px solid var(--color-border);">
         <div class="step-number" style="width: 24px; height: 24px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; margin-bottom: 12px;">1</div>
         <div class="step-text" style="font-size: 13px; font-weight: 600;">Másold ki az MCP szerver URL-t</div>

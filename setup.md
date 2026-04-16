@@ -2,6 +2,7 @@
 layout: page
 title: "Beállítási útmutató"
 description: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val 4 egyszerű lépésben."
+permalink: /setup/
 ---
 
 <div style="margin-bottom: 40px; display: inline-block; background: var(--color-surface); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--color-primary);">

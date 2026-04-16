@@ -2,6 +2,7 @@
 layout: page
 title: "Általános Szerződési Feltételek"
 description: "Hatályos: {{ 'now' | date: '%Y. %m. %d.' }}"
+permalink: /aszf/
 ---
 
 ## 1. Általános rendelkezések

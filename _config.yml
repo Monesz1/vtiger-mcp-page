@@ -1,8 +1,6 @@
 title: "vtigerCRM MCP"
 description: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val az MCP protokollon keresztül."
 lang: "hu"
-baseurl: "/vtiger-mcp-page"
-url: "https://Monesz1.github.io"
 
 product:
   name: "vtigerCRM MCP"
@@ -46,7 +44,7 @@ design:
 
 markdown: kramdown
 highlighter: rouge
-permalink: /:title/
+permalink: pretty
 exclude:
   - Gemfile
   - Gemfile.lock
