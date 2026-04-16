@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% seo %}
+<style>
+  :root {
+    --color-primary: {{ site.design.color_primary }};
+    --color-primary-dark: {{ site.design.color_primary_dark }};
+    --color-bg: {{ site.design.color_bg }};
+    --color-surface: {{ site.design.color_surface }};
+    --color-text: {{ site.design.color_text }};
+    --color-muted: {{ site.design.color_muted }};
+    --color-border: {{ site.design.color_border }};
+    --color-success: {{ site.design.color_success }};
+    --color-error: {{ site.design.color_error }};
+    --color-warning: {{ site.design.color_warning }};
+    --border-radius: {{ site.design.border_radius }};
+    --font-family: {{ site.design.font_family }};
+  }
+</style>

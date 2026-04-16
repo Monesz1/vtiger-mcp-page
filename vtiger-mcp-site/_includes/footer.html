@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h3>{{ site.product.name }}</h3>
+      <p>{{ site.product.tagline }}</p>
+    </div>
+    <div class="footer-col">
+      <h3>Navigáció</h3>
+      <ul>
+        {% for item in site.nav %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Kapcsolat</h3>
+      <p>{{ site.provider.name }}</p>
+      <p><a href="mailto:{{ site.provider.email }}">{{ site.provider.email }}</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.provider.name }}. Minden jog fenntartva.</p>
+  </div>
+</footer>

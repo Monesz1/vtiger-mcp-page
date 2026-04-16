@@ -1,0 +1,117 @@
+---
+layout: page
+title: "{{ site.data.site.connection_test.page_title }}"
+description: "{{ site.data.site.connection_test.intro }}"
+---
+
+<div class="test-form">
+  <div class="form-group">
+    <label for="vtiger_url">vtigerCRM URL</label>
+    <input type="url" id="vtiger_url" class="form-control" placeholder="https://crm.yourcompany.hu" required>
+  </div>
+  <div class="form-group">
+    <label for="username">Felhasználónév (Username)</label>
+    <input type="text" id="username" class="form-control" placeholder="admin" required>
+  </div>
+  <div class="form-group">
+    <label for="access_key">AccessKey</label>
+    <div class="password-wrapper">
+      <input type="password" id="access_key" class="form-control" placeholder="your-access-key" required>
+      <button type="button" class="toggle-password" onclick="togglePassword()">Mutat</button>
+    </div>
+  </div>
+  <button id="test-btn" class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="runTest()">Tesztelés indítása</button>
+
+  <div id="result-panel" class="test-result">
+    <h3 id="result-title"></h3>
+    <p id="result-message"></p>
+    <details>
+      <summary>Nyers válasz (Debug)</summary>
+      <pre id="result-raw"></pre>
+    </details>
+  </div>
+</div>
+
+<p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--color-muted);">
+  🔒 A hitelesítő adataidat nem tároljuk. A teszt elvégzése után azok nem maradnak a szerverünkön.
+</p>
+
+<script>
+  const MCP_TEST_URL = "{{ site.product.mcp_server_url }}/test-connection";
+
+  function togglePassword() {
+    const input = document.getElementById('access_key');
+    const btn = document.querySelector('.toggle-password');
+    if (input.type === 'password') {
+      input.type = 'text';
+      btn.textContent = 'Elrejt';
+    } else {
+      input.type = 'password';
+      btn.textContent = 'Mutat';
+    }
+  }
+
+  async function runTest() {
+    const btn = document.getElementById('test-btn');
+    const panel = document.getElementById('result-panel');
+    const title = document.getElementById('result-title');
+    const message = document.getElementById('result-message');
+    const raw = document.getElementById('result-raw');
+
+    const url = document.getElementById('vtiger_url').value;
+    const username = document.getElementById('username').value;
+    const accessKey = document.getElementById('access_key').value;
+
+    if (!url || !username || !accessKey) {
+      alert('Kérlek töltsd ki az összes mezőt!');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Tesztelés folyamatban...';
+    panel.className = 'test-result'; // Reset classes
+
+    try {
+      const response = await fetch(MCP_TEST_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ vtiger_url: url, username: username, access_key: accessKey })
+      });
+
+      const data = await response.json();
+      raw.textContent = JSON.stringify(data, null, 2);
+
+      if (response.ok && data.success) {
+        panel.classList.add('success');
+        title.innerHTML = '✅ Sikeres csatlakozás';
+        let msg = 'Az MCP szerver sikeresen csatlakozott a vtigerCRM-hez.<br>';
+        if (data.modules && data.modules.length > 0) {
+          msg += `Elérhető modulok száma: ${data.modules.length}.`;
+        }
+        message.innerHTML = msg;
+      } else {
+        panel.classList.add('error');
+        title.innerHTML = '❌ Csatlakozás sikertelen';
+        
+        let errorMsg = data.error || 'Ismeretlen hiba történt.';
+        let tip = '';
+
+        if (response.status === 401) {
+          tip = 'Tipp: Ellenőrizd a felhasználónevet és az AccessKey-t. Győződj meg róla, hogy nem a jelszavadat adtad meg.';
+        } else if (response.status === 404) {
+          tip = 'Tipp: A megadott vtigerCRM URL nem található. Ellenőrizd, hogy a cím helyes-e és a szerver elérhető-e.';
+        }
+
+        message.innerHTML = `<strong>Hiba:</strong> ${errorMsg}<br><br><em>${tip}</em>`;
+      }
+    } catch (error) {
+      panel.classList.add('error');
+      title.innerHTML = '❌ Hálózati hiba';
+      message.innerHTML = 'Nem sikerült elérni az MCP szervert. Kérlek ellenőrizd az internetkapcsolatodat, vagy próbáld újra később.';
+      raw.textContent = error.toString();
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Tesztelés indítása';
+    }
+  }
+</script>

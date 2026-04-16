@@ -1,0 +1,57 @@
+title: "vtigerCRM MCP"
+description: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val az MCP protokollon keresztül."
+lang: "hu"
+baseurl: ""
+url: "https://your-username.github.io"
+
+product:
+  name: "vtigerCRM MCP"
+  tagline: "AI-alapú vtigerCRM integráció Claude-dal"
+  mcp_server_url: "https://your-mcp-server.url/mcp"
+  health_endpoint: "https://your-mcp-server.url/health"
+  version: "1.0.0"
+  claude_connector_url: "https://claude.ai/settings/connectors?modal=add-custom-connector"
+
+provider:
+  name: "Your Company Name (e.v.)"
+  short_name: "Your Company"
+  address: "1000 Budapest, Példa utca 1."
+  tax_id: "12345678-1-01"
+  email: "info@yourcompany.hu"
+  website: "https://www.yourcompany.hu"
+
+nav:
+  - label: "Főoldal"
+    url: "/"
+  - label: "Beállítás"
+    url: "/setup/"
+  - label: "Kapcsolat tesztelése"
+    url: "/connection-test/"
+  - label: "ÁSZF"
+    url: "/aszf/"
+
+design:
+  color_primary: "#5B6EF5"
+  color_primary_dark: "#4357E0"
+  color_bg: "#FFFFFF"
+  color_surface: "#F8F9FE"
+  color_text: "#1A1A2E"
+  color_muted: "#6B7280"
+  color_border: "#E5E7EB"
+  color_success: "#10B981"
+  color_error: "#EF4444"
+  color_warning: "#F59E0B"
+  border_radius: "12px"
+  font_family: "'Inter', system-ui, sans-serif"
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
