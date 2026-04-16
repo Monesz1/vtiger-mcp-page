@@ -1,6 +1,8 @@
 title: "vtigerCRM MCP"
 description: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val az MCP protokollon keresztül."
 lang: "hu"
+baseurl: "/vtiger-mcp-page"
+url: "https://Monesz1.github.io"
 
 product:
   name: "vtigerCRM MCP"
@@ -53,3 +55,42 @@ exclude:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+hero:
+  headline: "Irányítsd a vtigerCRM-edet Claude AI-val"
+  subheadline: "Az MCP protokollon keresztül természetes nyelven kezelheted a kontaktokat, ügyleteket, jegyeket és egyebeket."
+  cta_primary: "Beállítás megkezdése"
+  cta_secondary: "Kapcsolat tesztelése"
+
+setup:
+  page_title: "Beállítási útmutató"
+  intro: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val 4 egyszerű lépésben."
+  time_estimate: "Kb. 3 perc"
+
+connection_test:
+  page_title: "Kapcsolat tesztelése"
+  intro: "Add meg a vtigerCRM hitelesítő adataidat és ellenőrizd, hogy az MCP szerver sikeresen tud-e csatlakozni."
+
+features:
+  - icon: "🔗"
+    title: "Natív MCP integráció"
+    body: "Szabványos MCP protokoll — működik Claude Desktoppal, VS Code Copilottal és minden MCP-kompatibilis klienssel."
+  - icon: "🔒"
+    title: "Biztonságos hitelesítés"
+    body: "AccessKey alapú azonosítás. A hitelesítő adataid nem kerülnek tárolásra a szerverünkön."
+  - icon: "⚡"
+    title: "Azonnali válasz"
+    body: "VQL lekérdezések, rekord létrehozás és módosítás természetes nyelvű utasításokkal."
+  - icon: "🛠️"
+    title: "Könnyű beállítás"
+    body: "Nincs kódolás, nincs plugin telepítés. URL, felhasználónév, AccessKey — és kész."
+
+faq:
+  - q: "Hol találom az AccessKey-t a vtigerCRM-ben?"
+    a: "Jelentkezz be a vtigerCRM-be, majd kattints a felső jobb sarokban a felhasználói ikonra → My Preferences → Access Key."
+  - q: "Mi az a vtigerCRM URL?"
+    a: "Az a webcím, amin keresztül eléred a vtigerCRM rendszeredet, pl. https://crm.cegem.hu vagy https://crm.vtiger.com/your-org."
+  - q: "Biztonságos az adatok megadása?"
+    a: "Az MCP szerver csak a kérések teljesítéséhez használja a hitelesítő adatokat. Adatot nem tárol, minden kommunikáció HTTPS-en keresztül történik."
+  - q: "Milyen vtigerCRM verziókat támogat?"
+    a: "A vtigerCRM 7.x és 8.x verzióit támogatja, amelyek rendelkeznek aktív REST Webservice API-val."
