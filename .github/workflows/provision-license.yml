@@ -1,0 +1,38 @@
+name: Provision License
+
+on:
+  workflow_dispatch:
+    inputs:
+      companyName:
+        type: string
+        default: ''
+      licenseKey:
+        required: true
+        type: string
+      contactName:
+        type: string
+        default: ''
+      phone:
+        type: string
+        default: ''
+      email:
+        type: string
+        default: ''
+      userCount:
+        type: string
+        default: '1'
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Process License Provisioning
+        run: |
+          echo "==== NEW LICENSE REQUEST ===="
+          echo "Company: ${{ github.event.inputs.companyName }}"
+          echo "Contact: ${{ github.event.inputs.contactName }}"
+          echo "Phone: ${{ github.event.inputs.phone }}"
+          echo "Email: ${{ github.event.inputs.email }}"
+          echo "Users: ${{ github.event.inputs.userCount }}"
+          echo "Generated Key: ${{ github.event.inputs.licenseKey }}"
+          echo "==============================="
