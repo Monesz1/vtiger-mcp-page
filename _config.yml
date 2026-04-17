@@ -63,6 +63,8 @@ hero:
   headline: "Irányítsd a vtigerCRM-edet Claude AI-val"
   subheadline: "Az MCP protokollon keresztül természetes nyelven kezelheted a kontaktokat, ügyleteket, jegyeket és egyebeket."
   cta_primary: "Beállítás megkezdése"
+  background_api_url: ""
+  background_api_method: "POST"
 
 setup:
   page_title: "Beállítási útmutató"
