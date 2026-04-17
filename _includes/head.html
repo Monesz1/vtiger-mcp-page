@@ -93,7 +93,7 @@
   .hero-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; padding: 48px; align-items: center; max-width: 1200px; margin: 0 auto; }
   .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .widgets-container { display: flex; flex-direction: column; gap: 24px; }
-  .connection-tester { background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: 32px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+  .connection-tester { background: #0F1626; color: white; border: 1px solid #1F2937; border-radius: 12px; padding: 32px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4); }
   .cta-group { display: flex; gap: 16px; }
   .hero { padding: 80px 48px; background: var(--color-bg); }
   .hero .container { max-width: 1200px; margin: 0 auto; text-align: left; }
@@ -184,7 +184,7 @@
   .page-content ul, .page-content ol { margin-bottom: 24px; padding-left: 24px; color: #334155; }
   .page-content li { margin-bottom: 8px; line-height: 1.6; }
 
-  /* Connection Test Form */
+  /* Connection Test Form / Mock Trial Widget */
   .test-form { background: var(--color-surface); color: var(--color-text); padding: 32px; border-radius: var(--border-radius); border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
   .form-group { margin-bottom: 20px; }
   .form-group label { display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155; }
@@ -195,6 +195,11 @@
   }
   .form-control::placeholder { color: #94A3B8; }
   .form-control:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15); }
+  
+  /* Trial Widget specifics */
+  #trial-request-btn { transition: opacity 0.2s, transform 0.2s; cursor: pointer; }
+  #trial-request-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .connection-tester .form-control:focus { outline: none; border-color: #3B82F6 !important; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important; }
   .password-wrapper { position: relative; }
   .toggle-password {
     position: absolute; right: 12px; top: 50%; transform: translateY(-50%);

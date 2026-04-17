@@ -17,20 +17,41 @@ layout: default
 
   <section class="widgets-container animate-fade-in-up delay-3">
     <div class="widget connection-tester">
-      <div class="widget-title" style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 24px; color: var(--color-primary);">Kapcsolat tesztelése</div>
-      <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">MiniCRM Rendszer URL</label>
-        <input type="url" id="baseurl" class="form-control" style="width: 100%; padding: 12px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace; transition: all 0.2s;" placeholder="https://r3.minicrm.hu/Api" value="https://r3.minicrm.hu/Api">
+      <div style="padding-bottom: 24px;">
+        <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: white;">Ingyenes bemutató és teszt igénylése</h2>
+        <p style="font-size: 13px; color: #94A3B8; margin: 0; line-height: 1.5;">Töltse ki az adatokat és azonnal megkapja a 14 napos próba licenckulcsot e-mailben.</p>
       </div>
+
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">API Kulcs</label>
-        <input type="password" id="apikey" class="form-control" style="width: 100%; padding: 12px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace; transition: all 0.2s;" placeholder="MCRM...">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Cégnév</label>
+        <input type="text" id="company_name" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="Cég neve">
       </div>
+      
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Kapcsolattartó neve</label>
+        <input type="text" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="Teljes név">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Mobiltelefon</label>
+        <input type="tel" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="+36 ...">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">E-mail</label>
+        <input type="email" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="email@ceg.hu">
+      </div>
+
       <div class="form-group" style="margin-bottom: 24px;">
-        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">Rendszer ID</label>
-        <input type="text" id="systemid" class="form-control" style="width: 100%; padding: 12px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace; transition: all 0.2s;" placeholder="12345">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Felhasználók száma</label>
+        <input type="number" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="1" value="1">
       </div>
-      <button id="test-connection-btn" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="runConnectionTest()">Kapcsolat ellenőrzése</button>
+
+      <button id="trial-request-btn" class="btn" style="width: 100%; justify-content: center; background: #E99538; color: #000; font-weight: 700; padding: 14px; border-radius: 6px; border: none; font-size: 15px;">Próba licenc igénylése</button>
+      
+      <div style="text-align: center; margin-top: 16px; font-size: 12px; color: #64748B;">
+        14 napos ingyenes próba. Nincs elköteleződés.
+      </div>
       
       <div id="test-result-wrapper" style="margin-top: 24px; display: none;"></div>
     </div>
