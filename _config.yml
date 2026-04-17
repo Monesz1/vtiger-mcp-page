@@ -23,10 +23,15 @@ nav:
     url: "/"
   - label: "Beállítás"
     url: "/setup/"
-  - label: "Kapcsolat tesztelése"
-    url: "/connection-test/"
   - label: "ÁSZF"
     url: "/aszf/"
+
+footer_links:
+  wikipedia: "https://hu.wikipedia.org/wiki/Customer_relationship_management"
+  facebook: "https://facebook.com/"
+  twitter: "https://twitter.com/"
+  linkedin: "https://linkedin.com/company/"
+  youtube: "https://youtube.com/"
 
 design:
   color_primary: "#1565C0"
@@ -58,16 +63,11 @@ hero:
   headline: "Irányítsd a vtigerCRM-edet Claude AI-val"
   subheadline: "Az MCP protokollon keresztül természetes nyelven kezelheted a kontaktokat, ügyleteket, jegyeket és egyebeket."
   cta_primary: "Beállítás megkezdése"
-  cta_secondary: "Kapcsolat tesztelése"
 
 setup:
   page_title: "Beállítási útmutató"
   intro: "Kösd össze a vtigerCRM rendszeredet a Claude AI-val 4 egyszerű lépésben."
   time_estimate: "Kb. 3 perc"
-
-connection_test:
-  page_title: "Kapcsolat tesztelése"
-  intro: "Add meg a vtigerCRM hitelesítő adataidat és ellenőrizd, hogy az MCP szerver sikeresen tud-e csatlakozni."
 
 features:
   - icon: "🔗"

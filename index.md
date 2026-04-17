@@ -4,15 +4,18 @@ layout: default
 
 <main class="hero-layout">
   <section class="hero-content">
-    <h1 style="font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -2px;">{{ site.hero.headline }}</h1>
-    <p style="font-size: 18px; color: var(--color-muted); margin-bottom: 32px; max-width: 440px;">{{ site.hero.subheadline }}</p>
-    <div class="cta-group">
-      <a href="{{ '/setup/' | relative_url }}" class="btn btn-primary">{{ site.hero.cta_primary }}</a>
-      <a href="{{ '/connection-test/' | relative_url }}" class="btn btn-secondary">{{ site.hero.cta_secondary }}</a>
+    <h1 style="font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -2px;" class="animate-fade-in-up">{{ site.hero.headline }}</h1>
+    <p style="font-size: 18px; color: var(--color-muted); margin-bottom: 32px; max-width: 440px;" class="animate-fade-in-up delay-1">{{ site.hero.subheadline }}</p>
+    <div class="cta-group animate-fade-in-up delay-2">
+      <button id="api-trigger-btn" class="btn btn-primary" onclick="testApiCall()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        {{ site.hero.cta_primary }}
+      </button>
     </div>
+    <div id="api-result" style="margin-top: 16px; font-size: 14px; display: none; padding: 12px; border-radius: 6px; font-weight: 500;" class="animate-fade-in-up"></div>
   </section>
 
-  <section class="widgets-container">
+  <section class="widgets-container animate-fade-in-up delay-3">
     <div class="widget connection-tester" style="pointer-events: none;">
       <div class="widget-title" style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 20px; color: #64748B;">Kapcsolat tesztelése (Live Sandbox)</div>
       <div class="form-group" style="margin-bottom: 16px;">
@@ -21,7 +24,7 @@ layout: default
       </div>
       <div class="form-group" style="margin-bottom: 16px;">
         <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">Felhasználónév</label>
-        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">admin</div>
+        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">fnev.pelda</div>
       </div>
       <div class="form-group" style="margin-bottom: 16px;">
         <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">AccessKey</label>
