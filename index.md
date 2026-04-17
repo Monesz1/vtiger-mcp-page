@@ -18,36 +18,36 @@ layout: default
   <section class="widgets-container animate-fade-in-up delay-3">
     <div class="widget connection-tester">
       <div style="padding-bottom: 24px;">
-        <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: white;">Ingyenes bemutató és teszt igénylése</h2>
-        <p style="font-size: 13px; color: #94A3B8; margin: 0; line-height: 1.5;">Töltse ki az adatokat és azonnal megkapja a 14 napos próba licenckulcsot e-mailben.</p>
+        <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #0F172A;">Ingyenes bemutató és teszt igénylése</h2>
+        <p style="font-size: 13px; color: #475569; margin: 0; line-height: 1.5;">Töltse ki az adatokat és azonnal megkapja a 14 napos próba licenckulcsot e-mailben.</p>
       </div>
 
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Cégnév</label>
-        <input type="text" id="company_name" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="Cég neve">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 600; color: #334155;">Cégnév</label>
+        <input type="text" id="company_name" class="form-control" style="width: 100%; padding: 10px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #0F172A; font-size: 14px; transition: all 0.2s;" placeholder="Cég neve">
       </div>
       
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Kapcsolattartó neve</label>
-        <input type="text" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="Teljes név">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 600; color: #334155;">Kapcsolattartó neve</label>
+        <input type="text" class="form-control" style="width: 100%; padding: 10px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #0F172A; font-size: 14px; transition: all 0.2s;" placeholder="Teljes név">
       </div>
 
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Mobiltelefon</label>
-        <input type="tel" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="+36 ...">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 600; color: #334155;">Mobiltelefon</label>
+        <input type="tel" class="form-control" style="width: 100%; padding: 10px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #0F172A; font-size: 14px; transition: all 0.2s;" placeholder="+36 ...">
       </div>
 
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">E-mail</label>
-        <input type="email" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="email@ceg.hu">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 600; color: #334155;">E-mail</label>
+        <input type="email" class="form-control" style="width: 100%; padding: 10px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #0F172A; font-size: 14px; transition: all 0.2s;" placeholder="email@ceg.hu">
       </div>
 
       <div class="form-group" style="margin-bottom: 24px;">
-        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 500; color: #94A3B8;">Felhasználók száma</label>
-        <input type="number" class="form-control" style="width: 100%; padding: 10px 14px; background: #0B0F19; border: 1px solid #1E293B; border-radius: 6px; color: white; font-size: 14px; transition: all 0.2s;" placeholder="1" value="1">
+        <label style="display: block; font-size: 12px; margin-bottom: 6px; font-weight: 600; color: #334155;">Felhasználók száma</label>
+        <input type="number" class="form-control" style="width: 100%; padding: 10px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #0F172A; font-size: 14px; transition: all 0.2s;" placeholder="1" value="1">
       </div>
 
-      <button id="trial-request-btn" class="btn" style="width: 100%; justify-content: center; background: #E99538; color: #000; font-weight: 700; padding: 14px; border-radius: 6px; border: none; font-size: 15px;">Próba licenc igénylése</button>
+      <button id="trial-request-btn" class="btn btn-primary" style="width: 100%; justify-content: center; font-weight: 700; padding: 14px; border-radius: 6px; font-size: 15px;" onclick="runConnectionTest()">Próba licenc igénylése</button>
       
       <div style="text-align: center; margin-top: 16px; font-size: 12px; color: #64748B;">
         14 napos ingyenes próba. Nincs elköteleződés.
