@@ -7,38 +7,32 @@ layout: default
     <h1 style="font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; letter-spacing: -2px;" class="animate-fade-in-up">{{ site.hero.headline }}</h1>
     <p style="font-size: 18px; color: var(--color-muted); margin-bottom: 32px; max-width: 440px;" class="animate-fade-in-up delay-1">{{ site.hero.subheadline }}</p>
     <div class="cta-group animate-fade-in-up delay-2">
-      <a href="{{ '/setup/' | relative_url }}" 
-         id="api-trigger-btn" 
-         class="btn btn-primary" 
-         {% if site.hero.background_api_url and site.hero.background_api_url != empty %}
-         onclick="triggerBackgroundApi(event, '{{ site.hero.background_api_url }}', '{{ site.hero.background_api_method | default: 'POST' }}', this.href)"
-         {% endif %}
-      >
+      <button id="api-trigger-btn" class="btn btn-primary" onclick="testApiCall()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         {{ site.hero.cta_primary }}
-      </a>
+      </button>
     </div>
+    <div id="api-result" style="margin-top: 16px; font-size: 14px; display: none; padding: 12px; border-radius: 6px; font-weight: 500;" class="animate-fade-in-up"></div>
   </section>
 
   <section class="widgets-container animate-fade-in-up delay-3">
-    <div class="widget connection-tester" style="pointer-events: none;">
-      <div class="widget-title" style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 20px; color: #64748B;">Kapcsolat tesztelése (Live Sandbox)</div>
+    <div class="widget connection-tester">
+      <div class="widget-title" style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 24px; color: var(--color-primary);">Kapcsolat tesztelése</div>
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">vtigerCRM URL</label>
-        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">https://crm.cegem.hu</div>
-      </div>
-      <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">Felhasználónév</label>
-        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">fnev.pelda</div>
+        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">MiniCRM Rendszer URL</label>
+        <input type="url" id="baseurl" class="form-control" style="width: 100%; padding: 12px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace; transition: all 0.2s;" placeholder="https://r3.minicrm.hu/Api" value="https://r3.minicrm.hu/Api">
       </div>
       <div class="form-group" style="margin-bottom: 16px;">
-        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">AccessKey</label>
-        <div class="input-mock" style="width: 100%; padding: 12px 14px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace;">••••••••••••••••</div>
+        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">API Kulcs</label>
+        <input type="password" id="apikey" class="form-control" style="width: 100%; padding: 12px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace; transition: all 0.2s;" placeholder="MCRM...">
       </div>
-      <div class="status-panel" style="margin-top: 24px; padding: 16px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 6px; color: #065F46; font-size: 14px; display: flex; align-items: center; gap: 8px; font-weight: 500;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        Sikeres csatlakozás: 34 elérhető modul.
+      <div class="form-group" style="margin-bottom: 24px;">
+        <label style="display: block; font-size: 13px; margin-bottom: 8px; font-weight: 600; color: #334155;">Rendszer ID</label>
+        <input type="text" id="systemid" class="form-control" style="width: 100%; padding: 12px 14px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; color: #334155; font-size: 14px; font-family: ui-monospace, monospace; transition: all 0.2s;" placeholder="12345">
       </div>
+      <button id="test-connection-btn" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="runConnectionTest()">Kapcsolat ellenőrzése</button>
+      
+      <div id="test-result-wrapper" style="margin-top: 24px; display: none;"></div>
     </div>
 
     <div class="steps-grid">
