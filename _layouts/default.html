@@ -148,8 +148,16 @@
         });
         
         if (!response.ok) {
-          console.error("API response error:", await response.text().catch(() => "N/A"));
-          throw new Error('Szerver hiba történt a GitHub Actions hívásakor');
+          const errText = await response.text();
+          console.error("API response error:", errText);
+          let errMsg = 'Ismeretlen GitHub hiba';
+          try {
+            const errObj = JSON.parse(errText);
+            errMsg = errObj.message || errText;
+          } catch(e) {
+            errMsg = errText;
+          }
+          throw new Error('GitHub API hiba: ' + errMsg);
         }
         // ---------------------------------------------------------------
         
