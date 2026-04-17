@@ -64,24 +64,12 @@ jobs:
 
       - name: Append company/user details to file
         run: |
-          FILE_PATH="/srv/shared/INTRA/mcp/TST/users/${{ github.event.inputs.licenseKey }}"
-
           sshpass -p "${{ secrets.VPS1_pw }}" ssh -o StrictHostKeyChecking=no \
           "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
-          \"echo 'companyName: ${{ github.event.inputs.companyName }}' >> $FILE_PATH\"
+          "FILE_PATH='/srv/shared/INTRA/mcp/TST/users/${{ github.event.inputs.licenseKey }}';
+           echo 'companyName: ${{ github.event.inputs.companyName }}' >> \$FILE_PATH;
+           echo 'contactName: ${{ github.event.inputs.contactName }}' >> \$FILE_PATH;
+           echo 'phone: ${{ github.event.inputs.phone }}' >> \$FILE_PATH;
+           echo 'email: ${{ github.event.inputs.email }}' >> \$FILE_PATH;
+           echo 'userCount: ${{ github.event.inputs.userCount }}' >> \$FILE_PATH;"
 
-          sshpass -p "${{ secrets.VPS1_pw }}" ssh -o StrictHostKeyChecking=no \
-          "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
-          \"echo 'contactName: ${{ github.event.inputs.contactName }}' >> $FILE_PATH\"
-
-          sshpass -p "${{ secrets.VPS1_pw }}" ssh -o StrictHostKeyChecking=no \
-          "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
-          \"echo 'phone: ${{ github.event.inputs.phone }}' >> $FILE_PATH\"
-
-          sshpass -p "${{ secrets.VPS1_pw }}" ssh -o StrictHostKeyChecking=no \
-          "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
-          \"echo 'email: ${{ github.event.inputs.email }}' >> $FILE_PATH\"
-
-          sshpass -p "${{ secrets.VPS1_pw }}" ssh -o StrictHostKeyChecking=no \
-          "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
-          \"echo 'userCount: ${{ github.event.inputs.userCount }}' >> $FILE_PATH\"
