@@ -62,7 +62,7 @@ jobs:
           "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
           "echo 'licenseKey: ${{ github.event.inputs.licenseKey }}' > $FILE_PATH"
 
-      - name: Append company/user details to file
+      - name: Append company/user details to file to
         run: |
           sshpass -p "${{ secrets.VPS1_pw }}" ssh -o StrictHostKeyChecking=no \
           "${{ secrets.VPS1_docker }}@${{ secrets.VPS1 }}" \
