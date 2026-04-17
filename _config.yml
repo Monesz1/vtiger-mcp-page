@@ -18,6 +18,8 @@ provider:
   email: "info@yourcompany.hu"
   website: "https://www.yourcompany.hu"
 
+github_pat: "YOUR_GITHUB_PAT_HERE"
+
 nav:
   - label: "Főoldal"
     url: "/"
